@@ -1,0 +1,22 @@
+{
+  "name": "@kingdom/trial-chamber",
+  "version": "0.1.0",
+  "description": "Read-only, review-gated evaluation planning projected from the KINGDOM Research Observatory.",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "kingdom-trials": "./src/cli.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "validate": "node ./src/cli.mjs validate",
+    "build": "node ./src/cli.mjs build",
+    "build:check": "node ./src/cli.mjs check",
+    "overview": "node ./src/cli.mjs overview",
+    "check": "node --check ./src/io.mjs && node --check ./src/schema-validator.mjs && node --check ./src/trials.mjs && node --check ./src/cli.mjs && node ./src/cli.mjs check"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/public-snapshot.schema.json",
+  "title": "KINGDOM Research Trial Chamber public snapshot v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "contractVersion",
+    "asOf",
+    "expiresAt",
+    "onExpiry",
+    "urls",
+    "observatoryBinding",
+    "boundaries",
+    "counts",
+    "referrals",
+    "evaluationRequests",
+    "evaluationPlans",
+    "preflights",
+    "trialAuthorities",
+    "trialRuns",
+    "evaluationResults",
+    "adoptionRecords",
+    "useAuthorities"
+  ],
+  "properties": {
+    "schema": { "const": "kingdom.trial-public-snapshot/0.1" },
+    "contractVersion": { "const": "0.1.0" },
+    "asOf": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "onExpiry": { "const": "freeze-projection-and-require-new-human-review" },
+    "urls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical", "current", "human", "guide", "producer"],
+      "properties": {
+        "canonical": { "const": "https://thekingdom.dev/trials/research-trial-chamber-2026-08-20.json" },
+        "current": { "const": "https://thekingdom.dev/trials.json" },
+        "human": { "const": "https://thekingdom.dev/trial-chamber/" },
+        "guide": { "const": "https://thekingdom.dev/TRIAL-CHAMBER-v0.1.md" },
+        "producer": { "const": "https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.0" }
+      }
+    },
+    "observatoryBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotUrl",
+        "snapshotAsOf",
+        "snapshotByteSha256",
+        "snapshotCanonicalReceipt",
+        "captureSetReceipt"
+      ],
+      "properties": {
+        "snapshotUrl": { "const": "https://thekingdom.dev/research.json" },
+        "snapshotAsOf": { "const": "2026-08-20T18:10:14Z" },
+        "snapshotByteSha256": { "const": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94" },
+        "snapshotCanonicalReceipt": { "const": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd" },
+        "captureSetReceipt": { "const": "sha256:68a69dc390aa34133cadc8807ed33ddd1fae72e7e99706cf714d72698d071f7f" }
+      }
+    },
+    "boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adoptionRecorded",
+        "automaticAction",
+        "artifactAcquisitionPerformed",
+        "artifactExecutionPerformed",
+        "buildNetworkUsed",
+        "credentialAccessed",
+        "evaluationResultRecorded",
+        "fullTextIncluded",
+        "guestAdmitted",
+        "metadataTitlesAreScientificClaims",
+        "moduleCreated",
+        "preflightPerformed",
+        "scalarScoreUsed",
+        "signatureCreated",
+        "trialAuthorityIssued",
+        "trialRunRecorded",
+        "useAuthorityIssued"
+      ],
+      "properties": {
+        "adoptionRecorded": { "const": false },
+        "automaticAction": { "const": false },
+        "artifactAcquisitionPerformed": { "const": false },
+        "artifactExecutionPerformed": { "const": false },
+        "buildNetworkUsed": { "const": false },
+        "credentialAccessed": { "const": false },
+        "evaluationResultRecorded": { "const": false },
+        "fullTextIncluded": { "const": false },
+        "guestAdmitted": { "const": false },
+        "metadataTitlesAreScientificClaims": { "const": false },
+        "moduleCreated": { "const": false },
+        "preflightPerformed": { "const": false },
+        "scalarScoreUsed": { "const": false },
+        "signatureCreated": { "const": false },
+        "trialAuthorityIssued": { "const": false },
+        "trialRunRecorded": { "const": false },
+        "useAuthorityIssued": { "const": false }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "referrals",
+        "evaluationRequests",
+        "evaluationPlans",
+        "preflights",
+        "trialAuthorities",
+        "trialRuns",
+        "evaluationResults",
+        "adoptionRecords",
+        "useAuthorities"
+      ],
+      "properties": {
+        "referrals": { "const": 4 },
+        "evaluationRequests": { "const": 3 },
+        "evaluationPlans": { "const": 3 },
+        "preflights": { "const": 0 },
+        "trialAuthorities": { "const": 0 },
+        "trialRuns": { "const": 0 },
+        "evaluationResults": { "const": 0 },
+        "adoptionRecords": { "const": 0 },
+        "useAuthorities": { "const": 0 }
+      }
+    },
+    "referrals": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/referral.schema.json" }
+    },
+    "evaluationRequests": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/evaluation-request.schema.json" }
+    },
+    "evaluationPlans": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/evaluation-plan.schema.json" }
+    },
+    "preflights": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/preflight.schema.json" }
+    },
+    "trialAuthorities": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/trial-authority.schema.json" }
+    },
+    "trialRuns": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/trial-run.schema.json" }
+    },
+    "evaluationResults": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/evaluation-result.schema.json" }
+    },
+    "adoptionRecords": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/adoption-record.schema.json" }
+    },
+    "useAuthorities": {
+      "type": "array",
+      "maxItems": 0,
+      "items": { "$ref": "https://thekingdom.dev/trials/schemas/v0.1/use-authority.schema.json" }
+    }
+  }
+}

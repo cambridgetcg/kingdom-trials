@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/trial-run.schema.json",
+  "title": "KINGDOM Trial Chamber trial run — reserved in Phase 0",
+  "description": "Deny-all contract. Trial Chamber v0.1 cannot execute or represent a run. A later version must define completed, interrupted, orphaned and reconciled lifecycles; exact authority and environment receipts; output quarantine and sanitizer provenance; stop events; cleanup evidence; and external-effect reconciliation.",
+  "type": "object",
+  "additionalProperties": false,
+  "not": {}
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "authoredOn": "2026-08-20",
+    "authorship": {
+      "compiledBy": "codex-assisted-publication",
+      "exactTextHumanReviewed": false,
+      "humanDirectionRecorded": true,
+      "origin": "maintainer-authorized-assisted-draft"
+    },
+    "evaluationLens": "security-model-clarity",
+    "evaluationQuestion": "On finite, self-authored MCP traces, can a declared intent-and-capability envelope identify pre-registered boundary violations that a minimal deny-by-default baseline misses, without changing allowed traces?",
+    "id": "evaluation-request:semantic-zero-trust-mcp:2026-08-20",
+    "planId": "evaluation-plan:semantic-zero-trust-mcp:2026-08-20",
+    "provenance": "Maintainer-authorized assisted draft from source metadata; exact text has not been human-reviewed and is not a claim extracted from or attributed to the work.",
+    "referralId": "referral:semantic-zero-trust-mcp:2026-08-20",
+    "requestState": "maintainer-authorized-assisted-draft",
+    "requestedInputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+    "schema": "kingdom.trial-evaluation-request/0.1",
+    "sourceMethodsKnown": false
+  },
+  {
+    "authoredOn": "2026-08-20",
+    "authorship": {
+      "compiledBy": "codex-assisted-publication",
+      "exactTextHumanReviewed": false,
+      "humanDirectionRecorded": true,
+      "origin": "maintainer-authorized-assisted-draft"
+    },
+    "evaluationLens": "measurement-reproducibility",
+    "evaluationQuestion": "Under one fixed audit budget, can a coverage-aware re-audit policy expose more planted change patterns across a finite synthetic registry than recency-only, score-only, or uniform baselines?",
+    "id": "evaluation-request:mcp-registry-drift:2026-08-20",
+    "planId": "evaluation-plan:mcp-registry-drift:2026-08-20",
+    "provenance": "Maintainer-authorized assisted draft from source metadata; exact text has not been human-reviewed and is not a claim extracted from or attributed to the work.",
+    "referralId": "referral:mcp-registry-drift:2026-08-20",
+    "requestState": "maintainer-authorized-assisted-draft",
+    "requestedInputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+    "schema": "kingdom.trial-evaluation-request/0.1",
+    "sourceMethodsKnown": false
+  },
+  {
+    "authoredOn": "2026-08-20",
+    "authorship": {
+      "compiledBy": "codex-assisted-publication",
+      "exactTextHumanReviewed": false,
+      "humanDirectionRecorded": true,
+      "origin": "maintainer-authorized-assisted-draft"
+    },
+    "evaluationLens": "mechanistic-evidence-discrimination",
+    "evaluationQuestion": "Can a bounded interpretability-evidence protocol distinguish feature association, declared confounding, and absence of signal without promoting a sparse representation into an explanation of reasoning?",
+    "id": "evaluation-request:thinking-no-thinking-sae:2026-08-20",
+    "planId": "evaluation-plan:thinking-no-thinking-sae:2026-08-20",
+    "provenance": "Maintainer-authorized assisted draft from source metadata; exact text has not been human-reviewed and is not a claim extracted from or attributed to the work.",
+    "referralId": "referral:thinking-no-thinking-sae:2026-08-20",
+    "requestState": "maintainer-authorized-assisted-draft",
+    "requestedInputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+    "schema": "kingdom.trial-evaluation-request/0.1",
+    "sourceMethodsKnown": false
+  }
+]

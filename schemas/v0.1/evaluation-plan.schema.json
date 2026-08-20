@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/evaluation-plan.schema.json",
+  "title": "KINGDOM Trial Chamber reversible unsealed draft plan v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "referralId",
+    "requestId",
+    "draftedOn",
+    "expiresAt",
+    "expiryEffect",
+    "authorship",
+    "planState",
+    "sealState",
+    "noRunState",
+    "evaluationLens",
+    "evaluationQuestion",
+    "questionProvenance",
+    "sourceMethodsKnown",
+    "inputClass",
+    "resourceEnvelope",
+    "reversibility",
+    "rightsBlock",
+    "securityBlock",
+    "threatModel",
+    "fixtures",
+    "controls",
+    "measures",
+    "criterionRules",
+    "passingEffect",
+    "stopConditions"
+  ],
+  "properties": {
+    "schema": { "const": "kingdom.trial-evaluation-plan/0.1" },
+    "id": { "type": "string", "pattern": "^evaluation-plan:[a-z0-9][a-z0-9:.-]{1,143}$" },
+    "referralId": { "type": "string", "pattern": "^referral:[a-z0-9][a-z0-9:.-]{1,158}$" },
+    "requestId": { "type": "string", "pattern": "^evaluation-request:[a-z0-9][a-z0-9:.-]{1,140}$" },
+    "draftedOn": { "type": "string", "format": "date" },
+    "expiresAt": { "type": "string", "format": "date-time" },
+    "expiryEffect": { "const": "FREEZE_AND_REQUIRE_NEW_HUMAN_REVIEW" },
+    "authorship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "humanDirectionRecorded", "exactTextHumanReviewed", "compiledBy"],
+      "properties": {
+        "origin": { "const": "maintainer-authorized-assisted-draft" },
+        "humanDirectionRecorded": { "const": true },
+        "exactTextHumanReviewed": { "const": false },
+        "compiledBy": { "const": "codex-assisted-publication" }
+      }
+    },
+    "planState": { "const": "DRAFT" },
+    "sealState": { "const": "UNSEALED" },
+    "noRunState": { "const": "NO-RUN" },
+    "evaluationLens": {
+      "enum": [
+        "security-model-clarity",
+        "measurement-reproducibility",
+        "mechanistic-evidence-discrimination"
+      ]
+    },
+    "evaluationQuestion": { "type": "string", "minLength": 40, "maxLength": 1200 },
+    "questionProvenance": { "type": "string", "minLength": 60, "maxLength": 600 },
+    "sourceMethodsKnown": { "const": false },
+    "inputClass": { "const": "SELF-AUTHORED-SYNTHETIC-ONLY" },
+    "resourceEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "network",
+        "credentials",
+        "personalData",
+        "persistentWrites",
+        "shell",
+        "artifactFetch",
+        "maxCases",
+        "maxRuntimeSeconds",
+        "maxInputBytes"
+      ],
+      "properties": {
+        "network": { "const": false },
+        "credentials": { "const": false },
+        "personalData": { "const": false },
+        "persistentWrites": { "const": false },
+        "shell": { "const": false },
+        "artifactFetch": { "const": false },
+        "maxCases": { "type": "integer", "minimum": 1, "maximum": 256 },
+        "maxRuntimeSeconds": { "type": "integer", "minimum": 1, "maximum": 60 },
+        "maxInputBytes": { "type": "integer", "minimum": 1, "maximum": 1048576 }
+      }
+    },
+    "reversibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["externalEffects", "cleanupRequired", "reason"],
+      "properties": {
+        "externalEffects": { "const": false },
+        "cleanupRequired": { "const": false },
+        "reason": { "type": "string", "minLength": 30, "maxLength": 500 }
+      }
+    },
+    "rightsBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reason"],
+      "properties": {
+        "state": { "const": "BLOCKED_PENDING_ITEM_RIGHTS_REVIEW" },
+        "reason": { "type": "string", "minLength": 40, "maxLength": 600 }
+      }
+    },
+    "securityBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reason"],
+      "properties": {
+        "state": { "const": "BLOCKED_PENDING_SECURITY_PREFLIGHT" },
+        "reason": { "type": "string", "minLength": 30, "maxLength": 600 }
+      }
+    },
+    "threatModel": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 20, "maxLength": 800 }
+    },
+    "fixtures": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "synthetic", "heldOut"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" },
+          "description": { "type": "string", "minLength": 20, "maxLength": 800 },
+          "synthetic": { "const": true },
+          "heldOut": { "type": "boolean" }
+        }
+      }
+    },
+    "controls": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 20, "maxLength": 800 }
+    },
+    "measures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "rule"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" },
+          "rule": { "type": "string", "minLength": 20, "maxLength": 800 }
+        }
+      }
+    },
+    "criterionRules": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["condition", "interpretation"],
+        "properties": {
+          "condition": { "type": "string", "minLength": 20, "maxLength": 1000 },
+          "interpretation": {
+            "enum": [
+              "retain-as-bounded-comparative-evidence",
+              "retain-as-no-observed-increment",
+              "retain-as-boundary-conflict",
+              "retain-as-design-conflict",
+              "retain-as-bounded-protocol-evidence",
+              "retain-as-category-error",
+              "retain-as-inconclusive-protocol-evidence"
+            ]
+          }
+        }
+      }
+    },
+    "passingEffect": { "const": "RETAIN_FOR_SEPARATE_REVIEW_ONLY" },
+    "stopConditions": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 20, "maxLength": 1000 }
+    }
+  }
+}

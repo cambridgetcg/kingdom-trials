@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/trial-authority.schema.json",
+  "title": "KINGDOM Trial Chamber trial authority — reserved in Phase 0",
+  "description": "Deny-all contract. Trial Chamber v0.1 cannot issue or represent trial authority. A later version must define the accountable principal, exact plan/preflight/artifact/environment receipts, validity window, one-run ceiling, zero retry, resource envelope, reason, revocation route, and emergency brake.",
+  "type": "object",
+  "additionalProperties": false,
+  "not": {}
+}

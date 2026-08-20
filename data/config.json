@@ -1,0 +1,38 @@
+{
+  "asOf": "2026-08-20T19:08:46Z",
+  "boundaries": {
+    "adoptionRecorded": false,
+    "automaticAction": false,
+    "artifactAcquisitionPerformed": false,
+    "artifactExecutionPerformed": false,
+    "buildNetworkUsed": false,
+    "credentialAccessed": false,
+    "evaluationResultRecorded": false,
+    "fullTextIncluded": false,
+    "guestAdmitted": false,
+    "metadataTitlesAreScientificClaims": false,
+    "moduleCreated": false,
+    "preflightPerformed": false,
+    "scalarScoreUsed": false,
+    "signatureCreated": false,
+    "trialAuthorityIssued": false,
+    "trialRunRecorded": false,
+    "useAuthorityIssued": false
+  },
+  "expiresAt": "2026-09-20T00:00:00Z",
+  "observatoryBinding": {
+    "captureSetReceipt": "sha256:68a69dc390aa34133cadc8807ed33ddd1fae72e7e99706cf714d72698d071f7f",
+    "snapshotAsOf": "2026-08-20T18:10:14Z",
+    "snapshotByteSha256": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94",
+    "snapshotCanonicalReceipt": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd",
+    "snapshotUrl": "https://thekingdom.dev/research.json"
+  },
+  "onExpiry": "freeze-projection-and-require-new-human-review",
+  "urls": {
+    "canonical": "https://thekingdom.dev/trials/research-trial-chamber-2026-08-20.json",
+    "current": "https://thekingdom.dev/trials.json",
+    "guide": "https://thekingdom.dev/TRIAL-CHAMBER-v0.1.md",
+    "human": "https://thekingdom.dev/trial-chamber/",
+    "producer": "https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/preflight.schema.json",
+  "title": "KINGDOM Trial Chamber preflight — reserved in Phase 0",
+  "description": "Deny-all contract. Trial Chamber v0.1 cannot represent a preflight. A later version must define review identity, artifact and environment receipts, rights, risks, resource bounds, brakes, expiry, and unresolved findings before any preflight record can exist.",
+  "type": "object",
+  "additionalProperties": false,
+  "not": {}
+}

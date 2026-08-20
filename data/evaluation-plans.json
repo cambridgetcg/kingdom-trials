@@ -1,0 +1,355 @@
+[
+  {
+    "authorship": {
+      "compiledBy": "codex-assisted-publication",
+      "exactTextHumanReviewed": false,
+      "humanDirectionRecorded": true,
+      "origin": "maintainer-authorized-assisted-draft"
+    },
+    "controls": [
+      "Freeze the envelope, minimal deny-by-default baseline, fixtures, expected labels, and allowed traces before any future classification.",
+      "Use the same five finite traces and the same declared capabilities for the envelope and baseline.",
+      "Preserve every per-trace category and reason; do not collapse them into a scalar outcome."
+    ],
+    "criterionRules": [
+      {
+        "condition": "The envelope identifies at least one pre-registered violation missed by the baseline and every allowed trace remains unchanged.",
+        "interpretation": "retain-as-bounded-comparative-evidence"
+      },
+      {
+        "condition": "The baseline identifies every violation that the envelope identifies.",
+        "interpretation": "retain-as-no-observed-increment"
+      },
+      {
+        "condition": "Any allowed trace changes classification or any reason cannot be traced to a frozen rule.",
+        "interpretation": "retain-as-boundary-conflict"
+      }
+    ],
+    "draftedOn": "2026-08-20",
+    "evaluationLens": "security-model-clarity",
+    "evaluationQuestion": "On finite, self-authored MCP traces, can a declared intent-and-capability envelope identify pre-registered boundary violations that a minimal deny-by-default baseline misses, without changing allowed traces?",
+    "expiresAt": "2026-09-20T00:00:00Z",
+    "expiryEffect": "FREEZE_AND_REQUIRE_NEW_HUMAN_REVIEW",
+    "fixtures": [
+      {
+        "description": "A request whose declared intent, capability, arguments, and delegation all remain inside the frozen envelope.",
+        "heldOut": false,
+        "id": "allowed-request",
+        "synthetic": true
+      },
+      {
+        "description": "A request invokes a capability omitted from the frozen capability set.",
+        "heldOut": false,
+        "id": "undeclared-capability",
+        "synthetic": true
+      },
+      {
+        "description": "A delegated trace attempts to exercise authority that the delegating principal does not hold.",
+        "heldOut": false,
+        "id": "confused-deputy-delegation",
+        "synthetic": true
+      },
+      {
+        "description": "A request reuses an intent declaration outside its frozen validity window.",
+        "heldOut": false,
+        "id": "stale-intent",
+        "synthetic": true
+      },
+      {
+        "description": "An allowed capability is paired with an argument shape outside the frozen declaration.",
+        "heldOut": true,
+        "id": "argument-shape-attack",
+        "synthetic": true
+      }
+    ],
+    "id": "evaluation-plan:semantic-zero-trust-mcp:2026-08-20",
+    "inputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+    "measures": [
+      {
+        "name": "per-trace-violation-identification",
+        "rule": "Record the envelope and baseline categories and reasons against each pre-registered label."
+      },
+      {
+        "name": "allowed-trace-preservation",
+        "rule": "Record whether each pre-registered allowed trace is unchanged under the envelope."
+      },
+      {
+        "name": "reason-traceability",
+        "rule": "Map every classification reason to one frozen envelope or baseline rule."
+      }
+    ],
+    "noRunState": "NO-RUN",
+    "passingEffect": "RETAIN_FOR_SEPARATE_REVIEW_ONLY",
+    "planState": "DRAFT",
+    "questionProvenance": "Maintainer-authorized assisted synthetic question; exact text has not been human-reviewed, and the observed work's methods and claims have not been inspected.",
+    "referralId": "referral:semantic-zero-trust-mcp:2026-08-20",
+    "requestId": "evaluation-request:semantic-zero-trust-mcp:2026-08-20",
+    "resourceEnvelope": {
+      "artifactFetch": false,
+      "credentials": false,
+      "maxCases": 5,
+      "maxInputBytes": 65536,
+      "maxRuntimeSeconds": 10,
+      "network": false,
+      "persistentWrites": false,
+      "personalData": false,
+      "shell": false
+    },
+    "reversibility": {
+      "cleanupRequired": false,
+      "externalEffects": false,
+      "reason": "Phase 0 records an inert plan only; no fixture is interpreted or run."
+    },
+    "rightsBlock": {
+      "reason": "No source artifact or implementation has been acquired and item-level reuse rights have not been reviewed.",
+      "state": "BLOCKED_PENDING_ITEM_RIGHTS_REVIEW"
+    },
+    "schema": "kingdom.trial-evaluation-plan/0.1",
+    "sealState": "UNSEALED",
+    "securityBlock": {
+      "reason": "No security preflight or capability-bounded runner exists for this plan.",
+      "state": "BLOCKED_PENDING_SECURITY_PREFLIGHT"
+    },
+    "sourceMethodsKnown": false,
+    "stopConditions": [
+      "Stop if any external execution, network access, credential access, personal data, persistent write, shell, or artifact fetch would be required.",
+      "Stop if fixtures, labels, rules, baseline behavior, or allowed traces are changed after comparison begins.",
+      "Stop if any interpretation expands into a general security or zero-trust claim.",
+      "Stop on expiry or if a pinned Observatory identity or integrity signal changes."
+    ],
+    "threatModel": [
+      "A permissive envelope may disguise boundary loss as improved detection.",
+      "A hostile instruction embedded in source metadata or a future artifact may try to alter the plan.",
+      "Fixture or label tuning may create circular evidence.",
+      "Finite synthetic traces cannot establish real-world MCP security."
+    ]
+  },
+  {
+    "authorship": {
+      "compiledBy": "codex-assisted-publication",
+      "exactTextHumanReviewed": false,
+      "humanDirectionRecorded": true,
+      "origin": "maintainer-authorized-assisted-draft"
+    },
+    "controls": [
+      "Freeze one self-authored registry, planted-change labels, age/activity/category strata, audit budget, and all policies before a future comparison.",
+      "Give uniform, recency-only, score-only, and coverage-balanced policies the identical audit budget.",
+      "Keep one separately authored fixture held out until policies and measures are frozen."
+    ],
+    "criterionRules": [
+      {
+        "condition": "Coverage-balanced review exposes more planted change patterns than every baseline under the same budget on the held-out fixture.",
+        "interpretation": "retain-as-bounded-comparative-evidence"
+      },
+      {
+        "condition": "One or more baselines expose an equal or greater number of planted patterns.",
+        "interpretation": "retain-as-no-observed-increment"
+      },
+      {
+        "condition": "Budgets differ, labels are ambiguous, a policy is tuned after held-out inspection, or a stratum has no auditable representation.",
+        "interpretation": "retain-as-design-conflict"
+      }
+    ],
+    "draftedOn": "2026-08-20",
+    "evaluationLens": "measurement-reproducibility",
+    "evaluationQuestion": "Under one fixed audit budget, can a coverage-aware re-audit policy expose more planted change patterns across a finite synthetic registry than recency-only, score-only, or uniform baselines?",
+    "expiresAt": "2026-09-20T00:00:00Z",
+    "expiryEffect": "FREEZE_AND_REQUIRE_NEW_HUMAN_REVIEW",
+    "fixtures": [
+      {
+        "description": "A frozen finite registry with planted changes distributed across age, activity, and category strata for policy development.",
+        "heldOut": false,
+        "id": "synthetic-registry-development",
+        "synthetic": true
+      },
+      {
+        "description": "A separately authored finite registry with undisclosed planted labels until policies, budgets, and measures are frozen.",
+        "heldOut": true,
+        "id": "synthetic-registry-held-out",
+        "synthetic": true
+      }
+    ],
+    "id": "evaluation-plan:mcp-registry-drift:2026-08-20",
+    "inputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+    "measures": [
+      {
+        "name": "planted-change-patterns-exposed",
+        "rule": "Report the distinct pre-registered planted pattern labels exposed by each policy."
+      },
+      {
+        "name": "strata-represented",
+        "rule": "Report which age, activity, and category strata receive at least one audit."
+      },
+      {
+        "name": "worst-stratum-coverage",
+        "rule": "Report the least-covered pre-registered stratum without averaging it away."
+      },
+      {
+        "name": "audit-budget",
+        "rule": "Record consumed audit units and reject cross-policy interpretation if budgets differ."
+      }
+    ],
+    "noRunState": "NO-RUN",
+    "passingEffect": "RETAIN_FOR_SEPARATE_REVIEW_ONLY",
+    "planState": "DRAFT",
+    "questionProvenance": "Maintainer-authorized assisted synthetic question; exact text has not been human-reviewed, and the observed work's methods and claims have not been inspected.",
+    "referralId": "referral:mcp-registry-drift:2026-08-20",
+    "requestId": "evaluation-request:mcp-registry-drift:2026-08-20",
+    "resourceEnvelope": {
+      "artifactFetch": false,
+      "credentials": false,
+      "maxCases": 96,
+      "maxInputBytes": 262144,
+      "maxRuntimeSeconds": 20,
+      "network": false,
+      "persistentWrites": false,
+      "personalData": false,
+      "shell": false
+    },
+    "reversibility": {
+      "cleanupRequired": false,
+      "externalEffects": false,
+      "reason": "Phase 0 records an inert plan only; no registry or policy is generated or run."
+    },
+    "rightsBlock": {
+      "reason": "No source artifact, registry dataset, or implementation has been acquired and item-level reuse rights have not been reviewed.",
+      "state": "BLOCKED_PENDING_ITEM_RIGHTS_REVIEW"
+    },
+    "schema": "kingdom.trial-evaluation-plan/0.1",
+    "sealState": "UNSEALED",
+    "securityBlock": {
+      "reason": "No security preflight or capability-bounded runner exists for this plan.",
+      "state": "BLOCKED_PENDING_SECURITY_PREFLIGHT"
+    },
+    "sourceMethodsKnown": false,
+    "stopConditions": [
+      "Stop if any live registry crawl, external artifact, network access, credential access, personal data, persistent write, shell, or artifact fetch would be required.",
+      "Stop if policies are tuned after held-out inspection or if audit budgets are unequal.",
+      "Stop if a planted label is ambiguous or any interpretation is presented as evidence of real registry drift.",
+      "Stop on expiry or if a pinned Observatory identity or integrity signal changes."
+    ],
+    "threatModel": [
+      "Policy tuning or label leakage may create circular evidence.",
+      "Unequal budgets may masquerade as policy quality.",
+      "Aggregate counts may hide a systematically neglected stratum.",
+      "A finite synthetic registry cannot establish drift in a live MCP registry."
+    ]
+  },
+  {
+    "authorship": {
+      "compiledBy": "codex-assisted-publication",
+      "exactTextHumanReviewed": false,
+      "humanDirectionRecorded": true,
+      "origin": "maintainer-authorized-assisted-draft"
+    },
+    "controls": [
+      "Freeze three tiny self-authored matrices, labels, toy encoder or hand-authored projection, and interpretation rules before any future calculation.",
+      "Use no model weights, external data, downloaded package, or unpinned library.",
+      "Keep association, declared confounding, null calibration, and causal interpretation as separate evidence categories."
+    ],
+    "criterionRules": [
+      {
+        "condition": "The protocol labels the planted condition feature as association, attributes the confounded feature to the declared confounder, and preserves the null case as absence of signal.",
+        "interpretation": "retain-as-bounded-protocol-evidence"
+      },
+      {
+        "condition": "Any matrix is assigned causal, reasoning, truth, intent, identity, or consciousness meaning.",
+        "interpretation": "retain-as-category-error"
+      },
+      {
+        "condition": "The association, confound, or null cases cannot be distinguished under the frozen rules.",
+        "interpretation": "retain-as-inconclusive-protocol-evidence"
+      }
+    ],
+    "draftedOn": "2026-08-20",
+    "evaluationLens": "mechanistic-evidence-discrimination",
+    "evaluationQuestion": "Can a bounded interpretability-evidence protocol distinguish feature association, declared confounding, and absence of signal without promoting a sparse representation into an explanation of reasoning?",
+    "expiresAt": "2026-09-20T00:00:00Z",
+    "expiryEffect": "FREEZE_AND_REQUIRE_NEW_HUMAN_REVIEW",
+    "fixtures": [
+      {
+        "description": "A tiny deterministic matrix with one self-authored feature planted to associate with a binary condition.",
+        "heldOut": false,
+        "id": "matrix-planted-condition-feature",
+        "synthetic": true
+      },
+      {
+        "description": "A tiny deterministic matrix where a declared confounder produces an apparent condition association.",
+        "heldOut": false,
+        "id": "matrix-declared-confounder",
+        "synthetic": true
+      },
+      {
+        "description": "A tiny deterministic null matrix with no planted condition signal.",
+        "heldOut": true,
+        "id": "matrix-null",
+        "synthetic": true
+      }
+    ],
+    "id": "evaluation-plan:thinking-no-thinking-sae:2026-08-20",
+    "inputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+    "measures": [
+      {
+        "name": "association-labeling",
+        "rule": "Record whether the planted condition feature is described only as association under the frozen projection."
+      },
+      {
+        "name": "confound-attribution",
+        "rule": "Record whether the declared confounder blocks promotion of its feature into a condition explanation."
+      },
+      {
+        "name": "null-calibration",
+        "rule": "Record whether the null matrix remains absence of signal under the frozen rules."
+      },
+      {
+        "name": "category-refusal",
+        "rule": "Record any attempted promotion into a mechanism, reasoning, truth, intent, identity, consciousness, or causal claim."
+      }
+    ],
+    "noRunState": "NO-RUN",
+    "passingEffect": "RETAIN_FOR_SEPARATE_REVIEW_ONLY",
+    "planState": "DRAFT",
+    "questionProvenance": "Maintainer-authorized assisted synthetic question; exact text has not been human-reviewed, and the observed work's methods and claims have not been inspected.",
+    "referralId": "referral:thinking-no-thinking-sae:2026-08-20",
+    "requestId": "evaluation-request:thinking-no-thinking-sae:2026-08-20",
+    "resourceEnvelope": {
+      "artifactFetch": false,
+      "credentials": false,
+      "maxCases": 3,
+      "maxInputBytes": 32768,
+      "maxRuntimeSeconds": 5,
+      "network": false,
+      "persistentWrites": false,
+      "personalData": false,
+      "shell": false
+    },
+    "reversibility": {
+      "cleanupRequired": false,
+      "externalEffects": false,
+      "reason": "Phase 0 records an inert plan only; no matrix, encoder, projection, or package is created or run."
+    },
+    "rightsBlock": {
+      "reason": "No source artifact, model, weights, data, code, or checkpoint has been acquired and item-level reuse rights have not been reviewed.",
+      "state": "BLOCKED_PENDING_ITEM_RIGHTS_REVIEW"
+    },
+    "schema": "kingdom.trial-evaluation-plan/0.1",
+    "sealState": "UNSEALED",
+    "securityBlock": {
+      "reason": "No security preflight or capability-bounded runner exists for this plan.",
+      "state": "BLOCKED_PENDING_SECURITY_PREFLIGHT"
+    },
+    "sourceMethodsKnown": false,
+    "stopConditions": [
+      "Stop if any external artifact, model weight, package, unpinned library, network access, credential access, personal data, persistent write, shell, or artifact fetch would be required.",
+      "Stop if the toy encoder, hand-authored projection, matrices, labels, or interpretation rules change after comparison begins.",
+      "Stop if any interpretation expands into a reasoning, truth, intent, identity, consciousness, mechanism, or causal claim.",
+      "Stop on expiry or if a pinned Observatory identity or integrity signal changes."
+    ],
+    "threatModel": [
+      "Sparse features may be promoted from association into unsupported explanation.",
+      "A declared confounder may be ignored after a visually compelling projection.",
+      "Null behavior may be hidden by post-hoc threshold choice.",
+      "Toy matrices cannot establish properties of a language model or reasoning."
+    ]
+  }
+]

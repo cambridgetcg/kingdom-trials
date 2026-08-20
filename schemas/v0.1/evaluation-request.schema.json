@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/evaluation-request.schema.json",
+  "title": "KINGDOM Trial Chamber maintainer-authorized assisted request draft v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "referralId",
+    "planId",
+    "authoredOn",
+    "authorship",
+    "requestState",
+    "evaluationLens",
+    "evaluationQuestion",
+    "provenance",
+    "requestedInputClass",
+    "sourceMethodsKnown"
+  ],
+  "properties": {
+    "schema": { "const": "kingdom.trial-evaluation-request/0.1" },
+    "id": { "type": "string", "pattern": "^evaluation-request:[a-z0-9][a-z0-9:.-]{1,140}$" },
+    "referralId": { "type": "string", "pattern": "^referral:[a-z0-9][a-z0-9:.-]{1,158}$" },
+    "planId": { "type": "string", "pattern": "^evaluation-plan:[a-z0-9][a-z0-9:.-]{1,143}$" },
+    "authoredOn": { "type": "string", "format": "date" },
+    "authorship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "humanDirectionRecorded", "exactTextHumanReviewed", "compiledBy"],
+      "properties": {
+        "origin": { "const": "maintainer-authorized-assisted-draft" },
+        "humanDirectionRecorded": { "const": true },
+        "exactTextHumanReviewed": { "const": false },
+        "compiledBy": { "const": "codex-assisted-publication" }
+      }
+    },
+    "requestState": { "const": "maintainer-authorized-assisted-draft" },
+    "evaluationLens": {
+      "enum": [
+        "security-model-clarity",
+        "measurement-reproducibility",
+        "mechanistic-evidence-discrimination"
+      ]
+    },
+    "evaluationQuestion": { "type": "string", "minLength": 40, "maxLength": 1200 },
+    "provenance": { "type": "string", "minLength": 40, "maxLength": 500 },
+    "requestedInputClass": { "const": "SELF-AUTHORED-SYNTHETIC-ONLY" },
+    "sourceMethodsKnown": { "const": false }
+  }
+}

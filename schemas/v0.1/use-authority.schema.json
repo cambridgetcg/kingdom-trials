@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/use-authority.schema.json",
+  "title": "KINGDOM Trial Chamber use authority — reserved in Phase 0",
+  "description": "Deny-all contract. Trial Chamber v0.1 cannot permit or represent use. A later version must bind an accountable principal, exact adoption and effect, validity window, maximum uses, capability envelope, reason, revocation route, expiry behavior, and module-or-guest ownership boundary.",
+  "type": "object",
+  "additionalProperties": false,
+  "not": {}
+}

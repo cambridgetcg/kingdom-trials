@@ -1,0 +1,669 @@
+{
+  "adoptionRecords": [],
+  "asOf": "2026-08-20T19:08:46Z",
+  "boundaries": {
+    "adoptionRecorded": false,
+    "artifactAcquisitionPerformed": false,
+    "artifactExecutionPerformed": false,
+    "automaticAction": false,
+    "buildNetworkUsed": false,
+    "credentialAccessed": false,
+    "evaluationResultRecorded": false,
+    "fullTextIncluded": false,
+    "guestAdmitted": false,
+    "metadataTitlesAreScientificClaims": false,
+    "moduleCreated": false,
+    "preflightPerformed": false,
+    "scalarScoreUsed": false,
+    "signatureCreated": false,
+    "trialAuthorityIssued": false,
+    "trialRunRecorded": false,
+    "useAuthorityIssued": false
+  },
+  "contractVersion": "0.1.0",
+  "counts": {
+    "adoptionRecords": 0,
+    "evaluationPlans": 3,
+    "evaluationRequests": 3,
+    "evaluationResults": 0,
+    "preflights": 0,
+    "referrals": 4,
+    "trialAuthorities": 0,
+    "trialRuns": 0,
+    "useAuthorities": 0
+  },
+  "evaluationPlans": [
+    {
+      "authorship": {
+        "compiledBy": "codex-assisted-publication",
+        "exactTextHumanReviewed": false,
+        "humanDirectionRecorded": true,
+        "origin": "maintainer-authorized-assisted-draft"
+      },
+      "controls": [
+        "Freeze one self-authored registry, planted-change labels, age/activity/category strata, audit budget, and all policies before a future comparison.",
+        "Give uniform, recency-only, score-only, and coverage-balanced policies the identical audit budget.",
+        "Keep one separately authored fixture held out until policies and measures are frozen."
+      ],
+      "criterionRules": [
+        {
+          "condition": "Coverage-balanced review exposes more planted change patterns than every baseline under the same budget on the held-out fixture.",
+          "interpretation": "retain-as-bounded-comparative-evidence"
+        },
+        {
+          "condition": "One or more baselines expose an equal or greater number of planted patterns.",
+          "interpretation": "retain-as-no-observed-increment"
+        },
+        {
+          "condition": "Budgets differ, labels are ambiguous, a policy is tuned after held-out inspection, or a stratum has no auditable representation.",
+          "interpretation": "retain-as-design-conflict"
+        }
+      ],
+      "draftedOn": "2026-08-20",
+      "evaluationLens": "measurement-reproducibility",
+      "evaluationQuestion": "Under one fixed audit budget, can a coverage-aware re-audit policy expose more planted change patterns across a finite synthetic registry than recency-only, score-only, or uniform baselines?",
+      "expiresAt": "2026-09-20T00:00:00Z",
+      "expiryEffect": "FREEZE_AND_REQUIRE_NEW_HUMAN_REVIEW",
+      "fixtures": [
+        {
+          "description": "A frozen finite registry with planted changes distributed across age, activity, and category strata for policy development.",
+          "heldOut": false,
+          "id": "synthetic-registry-development",
+          "synthetic": true
+        },
+        {
+          "description": "A separately authored finite registry with undisclosed planted labels until policies, budgets, and measures are frozen.",
+          "heldOut": true,
+          "id": "synthetic-registry-held-out",
+          "synthetic": true
+        }
+      ],
+      "id": "evaluation-plan:mcp-registry-drift:2026-08-20",
+      "inputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+      "measures": [
+        {
+          "name": "planted-change-patterns-exposed",
+          "rule": "Report the distinct pre-registered planted pattern labels exposed by each policy."
+        },
+        {
+          "name": "strata-represented",
+          "rule": "Report which age, activity, and category strata receive at least one audit."
+        },
+        {
+          "name": "worst-stratum-coverage",
+          "rule": "Report the least-covered pre-registered stratum without averaging it away."
+        },
+        {
+          "name": "audit-budget",
+          "rule": "Record consumed audit units and reject cross-policy interpretation if budgets differ."
+        }
+      ],
+      "noRunState": "NO-RUN",
+      "passingEffect": "RETAIN_FOR_SEPARATE_REVIEW_ONLY",
+      "planState": "DRAFT",
+      "questionProvenance": "Maintainer-authorized assisted synthetic question; exact text has not been human-reviewed, and the observed work's methods and claims have not been inspected.",
+      "referralId": "referral:mcp-registry-drift:2026-08-20",
+      "requestId": "evaluation-request:mcp-registry-drift:2026-08-20",
+      "resourceEnvelope": {
+        "artifactFetch": false,
+        "credentials": false,
+        "maxCases": 96,
+        "maxInputBytes": 262144,
+        "maxRuntimeSeconds": 20,
+        "network": false,
+        "persistentWrites": false,
+        "personalData": false,
+        "shell": false
+      },
+      "reversibility": {
+        "cleanupRequired": false,
+        "externalEffects": false,
+        "reason": "Phase 0 records an inert plan only; no registry or policy is generated or run."
+      },
+      "rightsBlock": {
+        "reason": "No source artifact, registry dataset, or implementation has been acquired and item-level reuse rights have not been reviewed.",
+        "state": "BLOCKED_PENDING_ITEM_RIGHTS_REVIEW"
+      },
+      "schema": "kingdom.trial-evaluation-plan/0.1",
+      "sealState": "UNSEALED",
+      "securityBlock": {
+        "reason": "No security preflight or capability-bounded runner exists for this plan.",
+        "state": "BLOCKED_PENDING_SECURITY_PREFLIGHT"
+      },
+      "sourceMethodsKnown": false,
+      "stopConditions": [
+        "Stop if any live registry crawl, external artifact, network access, credential access, personal data, persistent write, shell, or artifact fetch would be required.",
+        "Stop if policies are tuned after held-out inspection or if audit budgets are unequal.",
+        "Stop if a planted label is ambiguous or any interpretation is presented as evidence of real registry drift.",
+        "Stop on expiry or if a pinned Observatory identity or integrity signal changes."
+      ],
+      "threatModel": [
+        "Policy tuning or label leakage may create circular evidence.",
+        "Unequal budgets may masquerade as policy quality.",
+        "Aggregate counts may hide a systematically neglected stratum.",
+        "A finite synthetic registry cannot establish drift in a live MCP registry."
+      ]
+    },
+    {
+      "authorship": {
+        "compiledBy": "codex-assisted-publication",
+        "exactTextHumanReviewed": false,
+        "humanDirectionRecorded": true,
+        "origin": "maintainer-authorized-assisted-draft"
+      },
+      "controls": [
+        "Freeze the envelope, minimal deny-by-default baseline, fixtures, expected labels, and allowed traces before any future classification.",
+        "Use the same five finite traces and the same declared capabilities for the envelope and baseline.",
+        "Preserve every per-trace category and reason; do not collapse them into a scalar outcome."
+      ],
+      "criterionRules": [
+        {
+          "condition": "The envelope identifies at least one pre-registered violation missed by the baseline and every allowed trace remains unchanged.",
+          "interpretation": "retain-as-bounded-comparative-evidence"
+        },
+        {
+          "condition": "The baseline identifies every violation that the envelope identifies.",
+          "interpretation": "retain-as-no-observed-increment"
+        },
+        {
+          "condition": "Any allowed trace changes classification or any reason cannot be traced to a frozen rule.",
+          "interpretation": "retain-as-boundary-conflict"
+        }
+      ],
+      "draftedOn": "2026-08-20",
+      "evaluationLens": "security-model-clarity",
+      "evaluationQuestion": "On finite, self-authored MCP traces, can a declared intent-and-capability envelope identify pre-registered boundary violations that a minimal deny-by-default baseline misses, without changing allowed traces?",
+      "expiresAt": "2026-09-20T00:00:00Z",
+      "expiryEffect": "FREEZE_AND_REQUIRE_NEW_HUMAN_REVIEW",
+      "fixtures": [
+        {
+          "description": "A request whose declared intent, capability, arguments, and delegation all remain inside the frozen envelope.",
+          "heldOut": false,
+          "id": "allowed-request",
+          "synthetic": true
+        },
+        {
+          "description": "A request invokes a capability omitted from the frozen capability set.",
+          "heldOut": false,
+          "id": "undeclared-capability",
+          "synthetic": true
+        },
+        {
+          "description": "A delegated trace attempts to exercise authority that the delegating principal does not hold.",
+          "heldOut": false,
+          "id": "confused-deputy-delegation",
+          "synthetic": true
+        },
+        {
+          "description": "A request reuses an intent declaration outside its frozen validity window.",
+          "heldOut": false,
+          "id": "stale-intent",
+          "synthetic": true
+        },
+        {
+          "description": "An allowed capability is paired with an argument shape outside the frozen declaration.",
+          "heldOut": true,
+          "id": "argument-shape-attack",
+          "synthetic": true
+        }
+      ],
+      "id": "evaluation-plan:semantic-zero-trust-mcp:2026-08-20",
+      "inputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+      "measures": [
+        {
+          "name": "per-trace-violation-identification",
+          "rule": "Record the envelope and baseline categories and reasons against each pre-registered label."
+        },
+        {
+          "name": "allowed-trace-preservation",
+          "rule": "Record whether each pre-registered allowed trace is unchanged under the envelope."
+        },
+        {
+          "name": "reason-traceability",
+          "rule": "Map every classification reason to one frozen envelope or baseline rule."
+        }
+      ],
+      "noRunState": "NO-RUN",
+      "passingEffect": "RETAIN_FOR_SEPARATE_REVIEW_ONLY",
+      "planState": "DRAFT",
+      "questionProvenance": "Maintainer-authorized assisted synthetic question; exact text has not been human-reviewed, and the observed work's methods and claims have not been inspected.",
+      "referralId": "referral:semantic-zero-trust-mcp:2026-08-20",
+      "requestId": "evaluation-request:semantic-zero-trust-mcp:2026-08-20",
+      "resourceEnvelope": {
+        "artifactFetch": false,
+        "credentials": false,
+        "maxCases": 5,
+        "maxInputBytes": 65536,
+        "maxRuntimeSeconds": 10,
+        "network": false,
+        "persistentWrites": false,
+        "personalData": false,
+        "shell": false
+      },
+      "reversibility": {
+        "cleanupRequired": false,
+        "externalEffects": false,
+        "reason": "Phase 0 records an inert plan only; no fixture is interpreted or run."
+      },
+      "rightsBlock": {
+        "reason": "No source artifact or implementation has been acquired and item-level reuse rights have not been reviewed.",
+        "state": "BLOCKED_PENDING_ITEM_RIGHTS_REVIEW"
+      },
+      "schema": "kingdom.trial-evaluation-plan/0.1",
+      "sealState": "UNSEALED",
+      "securityBlock": {
+        "reason": "No security preflight or capability-bounded runner exists for this plan.",
+        "state": "BLOCKED_PENDING_SECURITY_PREFLIGHT"
+      },
+      "sourceMethodsKnown": false,
+      "stopConditions": [
+        "Stop if any external execution, network access, credential access, personal data, persistent write, shell, or artifact fetch would be required.",
+        "Stop if fixtures, labels, rules, baseline behavior, or allowed traces are changed after comparison begins.",
+        "Stop if any interpretation expands into a general security or zero-trust claim.",
+        "Stop on expiry or if a pinned Observatory identity or integrity signal changes."
+      ],
+      "threatModel": [
+        "A permissive envelope may disguise boundary loss as improved detection.",
+        "A hostile instruction embedded in source metadata or a future artifact may try to alter the plan.",
+        "Fixture or label tuning may create circular evidence.",
+        "Finite synthetic traces cannot establish real-world MCP security."
+      ]
+    },
+    {
+      "authorship": {
+        "compiledBy": "codex-assisted-publication",
+        "exactTextHumanReviewed": false,
+        "humanDirectionRecorded": true,
+        "origin": "maintainer-authorized-assisted-draft"
+      },
+      "controls": [
+        "Freeze three tiny self-authored matrices, labels, toy encoder or hand-authored projection, and interpretation rules before any future calculation.",
+        "Use no model weights, external data, downloaded package, or unpinned library.",
+        "Keep association, declared confounding, null calibration, and causal interpretation as separate evidence categories."
+      ],
+      "criterionRules": [
+        {
+          "condition": "The protocol labels the planted condition feature as association, attributes the confounded feature to the declared confounder, and preserves the null case as absence of signal.",
+          "interpretation": "retain-as-bounded-protocol-evidence"
+        },
+        {
+          "condition": "Any matrix is assigned causal, reasoning, truth, intent, identity, or consciousness meaning.",
+          "interpretation": "retain-as-category-error"
+        },
+        {
+          "condition": "The association, confound, or null cases cannot be distinguished under the frozen rules.",
+          "interpretation": "retain-as-inconclusive-protocol-evidence"
+        }
+      ],
+      "draftedOn": "2026-08-20",
+      "evaluationLens": "mechanistic-evidence-discrimination",
+      "evaluationQuestion": "Can a bounded interpretability-evidence protocol distinguish feature association, declared confounding, and absence of signal without promoting a sparse representation into an explanation of reasoning?",
+      "expiresAt": "2026-09-20T00:00:00Z",
+      "expiryEffect": "FREEZE_AND_REQUIRE_NEW_HUMAN_REVIEW",
+      "fixtures": [
+        {
+          "description": "A tiny deterministic matrix with one self-authored feature planted to associate with a binary condition.",
+          "heldOut": false,
+          "id": "matrix-planted-condition-feature",
+          "synthetic": true
+        },
+        {
+          "description": "A tiny deterministic matrix where a declared confounder produces an apparent condition association.",
+          "heldOut": false,
+          "id": "matrix-declared-confounder",
+          "synthetic": true
+        },
+        {
+          "description": "A tiny deterministic null matrix with no planted condition signal.",
+          "heldOut": true,
+          "id": "matrix-null",
+          "synthetic": true
+        }
+      ],
+      "id": "evaluation-plan:thinking-no-thinking-sae:2026-08-20",
+      "inputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+      "measures": [
+        {
+          "name": "association-labeling",
+          "rule": "Record whether the planted condition feature is described only as association under the frozen projection."
+        },
+        {
+          "name": "confound-attribution",
+          "rule": "Record whether the declared confounder blocks promotion of its feature into a condition explanation."
+        },
+        {
+          "name": "null-calibration",
+          "rule": "Record whether the null matrix remains absence of signal under the frozen rules."
+        },
+        {
+          "name": "category-refusal",
+          "rule": "Record any attempted promotion into a mechanism, reasoning, truth, intent, identity, consciousness, or causal claim."
+        }
+      ],
+      "noRunState": "NO-RUN",
+      "passingEffect": "RETAIN_FOR_SEPARATE_REVIEW_ONLY",
+      "planState": "DRAFT",
+      "questionProvenance": "Maintainer-authorized assisted synthetic question; exact text has not been human-reviewed, and the observed work's methods and claims have not been inspected.",
+      "referralId": "referral:thinking-no-thinking-sae:2026-08-20",
+      "requestId": "evaluation-request:thinking-no-thinking-sae:2026-08-20",
+      "resourceEnvelope": {
+        "artifactFetch": false,
+        "credentials": false,
+        "maxCases": 3,
+        "maxInputBytes": 32768,
+        "maxRuntimeSeconds": 5,
+        "network": false,
+        "persistentWrites": false,
+        "personalData": false,
+        "shell": false
+      },
+      "reversibility": {
+        "cleanupRequired": false,
+        "externalEffects": false,
+        "reason": "Phase 0 records an inert plan only; no matrix, encoder, projection, or package is created or run."
+      },
+      "rightsBlock": {
+        "reason": "No source artifact, model, weights, data, code, or checkpoint has been acquired and item-level reuse rights have not been reviewed.",
+        "state": "BLOCKED_PENDING_ITEM_RIGHTS_REVIEW"
+      },
+      "schema": "kingdom.trial-evaluation-plan/0.1",
+      "sealState": "UNSEALED",
+      "securityBlock": {
+        "reason": "No security preflight or capability-bounded runner exists for this plan.",
+        "state": "BLOCKED_PENDING_SECURITY_PREFLIGHT"
+      },
+      "sourceMethodsKnown": false,
+      "stopConditions": [
+        "Stop if any external artifact, model weight, package, unpinned library, network access, credential access, personal data, persistent write, shell, or artifact fetch would be required.",
+        "Stop if the toy encoder, hand-authored projection, matrices, labels, or interpretation rules change after comparison begins.",
+        "Stop if any interpretation expands into a reasoning, truth, intent, identity, consciousness, mechanism, or causal claim.",
+        "Stop on expiry or if a pinned Observatory identity or integrity signal changes."
+      ],
+      "threatModel": [
+        "Sparse features may be promoted from association into unsupported explanation.",
+        "A declared confounder may be ignored after a visually compelling projection.",
+        "Null behavior may be hidden by post-hoc threshold choice.",
+        "Toy matrices cannot establish properties of a language model or reasoning."
+      ]
+    }
+  ],
+  "evaluationRequests": [
+    {
+      "authoredOn": "2026-08-20",
+      "authorship": {
+        "compiledBy": "codex-assisted-publication",
+        "exactTextHumanReviewed": false,
+        "humanDirectionRecorded": true,
+        "origin": "maintainer-authorized-assisted-draft"
+      },
+      "evaluationLens": "measurement-reproducibility",
+      "evaluationQuestion": "Under one fixed audit budget, can a coverage-aware re-audit policy expose more planted change patterns across a finite synthetic registry than recency-only, score-only, or uniform baselines?",
+      "id": "evaluation-request:mcp-registry-drift:2026-08-20",
+      "planId": "evaluation-plan:mcp-registry-drift:2026-08-20",
+      "provenance": "Maintainer-authorized assisted draft from source metadata; exact text has not been human-reviewed and is not a claim extracted from or attributed to the work.",
+      "referralId": "referral:mcp-registry-drift:2026-08-20",
+      "requestState": "maintainer-authorized-assisted-draft",
+      "requestedInputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+      "schema": "kingdom.trial-evaluation-request/0.1",
+      "sourceMethodsKnown": false
+    },
+    {
+      "authoredOn": "2026-08-20",
+      "authorship": {
+        "compiledBy": "codex-assisted-publication",
+        "exactTextHumanReviewed": false,
+        "humanDirectionRecorded": true,
+        "origin": "maintainer-authorized-assisted-draft"
+      },
+      "evaluationLens": "security-model-clarity",
+      "evaluationQuestion": "On finite, self-authored MCP traces, can a declared intent-and-capability envelope identify pre-registered boundary violations that a minimal deny-by-default baseline misses, without changing allowed traces?",
+      "id": "evaluation-request:semantic-zero-trust-mcp:2026-08-20",
+      "planId": "evaluation-plan:semantic-zero-trust-mcp:2026-08-20",
+      "provenance": "Maintainer-authorized assisted draft from source metadata; exact text has not been human-reviewed and is not a claim extracted from or attributed to the work.",
+      "referralId": "referral:semantic-zero-trust-mcp:2026-08-20",
+      "requestState": "maintainer-authorized-assisted-draft",
+      "requestedInputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+      "schema": "kingdom.trial-evaluation-request/0.1",
+      "sourceMethodsKnown": false
+    },
+    {
+      "authoredOn": "2026-08-20",
+      "authorship": {
+        "compiledBy": "codex-assisted-publication",
+        "exactTextHumanReviewed": false,
+        "humanDirectionRecorded": true,
+        "origin": "maintainer-authorized-assisted-draft"
+      },
+      "evaluationLens": "mechanistic-evidence-discrimination",
+      "evaluationQuestion": "Can a bounded interpretability-evidence protocol distinguish feature association, declared confounding, and absence of signal without promoting a sparse representation into an explanation of reasoning?",
+      "id": "evaluation-request:thinking-no-thinking-sae:2026-08-20",
+      "planId": "evaluation-plan:thinking-no-thinking-sae:2026-08-20",
+      "provenance": "Maintainer-authorized assisted draft from source metadata; exact text has not been human-reviewed and is not a claim extracted from or attributed to the work.",
+      "referralId": "referral:thinking-no-thinking-sae:2026-08-20",
+      "requestState": "maintainer-authorized-assisted-draft",
+      "requestedInputClass": "SELF-AUTHORED-SYNTHETIC-ONLY",
+      "schema": "kingdom.trial-evaluation-request/0.1",
+      "sourceMethodsKnown": false
+    }
+  ],
+  "evaluationResults": [],
+  "expiresAt": "2026-09-20T00:00:00Z",
+  "observatoryBinding": {
+    "captureSetReceipt": "sha256:68a69dc390aa34133cadc8807ed33ddd1fae72e7e99706cf714d72698d071f7f",
+    "snapshotAsOf": "2026-08-20T18:10:14Z",
+    "snapshotByteSha256": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94",
+    "snapshotCanonicalReceipt": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd",
+    "snapshotUrl": "https://thekingdom.dev/research.json"
+  },
+  "onExpiry": "freeze-projection-and-require-new-human-review",
+  "preflights": [],
+  "referrals": [
+    {
+      "claimBoundary": "The source metadata title is not a scientific claim; no claim has been extracted or evaluated.",
+      "disposition": "advanced-to-human-scoping",
+      "evaluationLens": "measurement-reproducibility",
+      "evaluationRequestId": "evaluation-request:mcp-registry-drift:2026-08-20",
+      "holdReasons": [],
+      "id": "referral:mcp-registry-drift:2026-08-20",
+      "referredOn": "2026-08-20",
+      "schema": "kingdom.trial-referral/0.1",
+      "sourceBinding": {
+        "observationIds": [
+          "observation:arxiv:e6f88ec1494225ed"
+        ],
+        "observations": [
+          {
+            "canonicalUrl": "https://arxiv.org/abs/2608.00997",
+            "observationId": "observation:arxiv:e6f88ec1494225ed",
+            "observedAt": "2026-08-20T18:10:14Z",
+            "sourceId": "arxiv",
+            "sourcePayloadReceipt": "sha256:2ee0413c8600110b459d631b27cb368754f5e44af15334c449ec8a839887849f",
+            "sourceRecordId": "2608.00997"
+          }
+        ],
+        "payloadReceiptsAreArtifactDigests": false,
+        "primaryIdentifier": {
+          "scheme": "arxiv",
+          "value": "2608.00997"
+        },
+        "relatedWorkIds": [],
+        "signalIds": [
+          "signal:watchlist-match:a9480de36dfaf813"
+        ],
+        "snapshotAsOf": "2026-08-20T18:10:14Z",
+        "snapshotByteSha256": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94",
+        "snapshotCanonicalReceipt": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd",
+        "sourceIds": [
+          "arxiv"
+        ],
+        "workId": "work:59218754c0e3e56078b7"
+      },
+      "sourceMetadataTitle": "Registry Descriptions Go Stale Unevenly: An 89-Day Measurement of Model Context Protocol Drift, and Why Drift-Ranked Re-Auditing Under-Covers It",
+      "sourceTitleIsScientificClaim": false
+    },
+    {
+      "claimBoundary": "The source metadata title is not a scientific claim; no claim has been extracted or evaluated.",
+      "disposition": "held-for-source-resolution",
+      "evaluationLens": "source-identity-resolution",
+      "evaluationRequestId": null,
+      "holdReasons": [
+        "self-version-relation-unresolved",
+        "supplement-target-absent-from-pinned-snapshot",
+        "model-pin-absent",
+        "method-pin-absent",
+        "dataset-pin-absent",
+        "artifact-pin-absent"
+      ],
+      "id": "referral:role-styled-prompt-injection:2026-08-20",
+      "referredOn": "2026-08-20",
+      "schema": "kingdom.trial-referral/0.1",
+      "sourceBinding": {
+        "observationIds": [
+          "observation:datacite:6119662c70f05464"
+        ],
+        "observations": [
+          {
+            "canonicalUrl": "https://zenodo.org/doi/10.5281/zenodo.21757178",
+            "observationId": "observation:datacite:6119662c70f05464",
+            "observedAt": "2026-08-20T18:07:20Z",
+            "sourceId": "datacite",
+            "sourcePayloadReceipt": "sha256:c4aa57a024ce29f52fb92ef62fb1f74687553b6ef91b8591639693f6d171f061",
+            "sourceRecordId": "10.5281/zenodo.21757178"
+          }
+        ],
+        "payloadReceiptsAreArtifactDigests": false,
+        "primaryIdentifier": {
+          "scheme": "doi",
+          "value": "10.5281/zenodo.21757178"
+        },
+        "relatedWorkIds": [],
+        "signalIds": [
+          "signal:publication-link:1953589b522a8813",
+          "signal:publication-link:a83f4b77907675be",
+          "signal:watchlist-match:0e5818f2beb21d20"
+        ],
+        "snapshotAsOf": "2026-08-20T18:10:14Z",
+        "snapshotByteSha256": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94",
+        "snapshotCanonicalReceipt": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd",
+        "sourceIds": [
+          "datacite"
+        ],
+        "workId": "work:001b6af0d2b1fc7f3ac0"
+      },
+      "sourceMetadataTitle": "Role-Styled Prompt Injection: An Activation and KV-State Probe in a Compact Language Model",
+      "sourceTitleIsScientificClaim": false
+    },
+    {
+      "claimBoundary": "The source metadata title is not a scientific claim; no claim has been extracted or evaluated.",
+      "disposition": "advanced-to-human-scoping",
+      "evaluationLens": "security-model-clarity",
+      "evaluationRequestId": "evaluation-request:semantic-zero-trust-mcp:2026-08-20",
+      "holdReasons": [],
+      "id": "referral:semantic-zero-trust-mcp:2026-08-20",
+      "referredOn": "2026-08-20",
+      "schema": "kingdom.trial-referral/0.1",
+      "sourceBinding": {
+        "observationIds": [
+          "observation:datacite:1916afceb5a82955",
+          "observation:openalex:b3101fd2b0bad721"
+        ],
+        "observations": [
+          {
+            "canonicalUrl": "https://zenodo.org/doi/10.5281/zenodo.21731418",
+            "observationId": "observation:datacite:1916afceb5a82955",
+            "observedAt": "2026-08-20T18:09:58Z",
+            "sourceId": "datacite",
+            "sourcePayloadReceipt": "sha256:8073fb244311355bd71e6becb29d38ae72bce726c186ffb315c586e6ae74bba5",
+            "sourceRecordId": "10.5281/zenodo.21731418"
+          },
+          {
+            "canonicalUrl": "https://doi.org/10.5281/zenodo.21731418",
+            "observationId": "observation:openalex:b3101fd2b0bad721",
+            "observedAt": "2026-08-20T18:07:48Z",
+            "sourceId": "openalex",
+            "sourcePayloadReceipt": "sha256:2b632e0415b541f7fd58e14d4cd2c88a7a9fe8360a62fc12a7588a2196b4c637",
+            "sourceRecordId": "W7172128171"
+          }
+        ],
+        "payloadReceiptsAreArtifactDigests": false,
+        "primaryIdentifier": {
+          "scheme": "doi",
+          "value": "10.5281/zenodo.21731418"
+        },
+        "relatedWorkIds": [
+          "work:c6624953de841194cf4c"
+        ],
+        "signalIds": [
+          "signal:publication-link:6f42c3e3435c2904",
+          "signal:source-corroboration:b18a3d633157d76f",
+          "signal:version-activity:1d84606fbe27c21d",
+          "signal:watchlist-match:e6fa8160dbdf4705"
+        ],
+        "snapshotAsOf": "2026-08-20T18:10:14Z",
+        "snapshotByteSha256": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94",
+        "snapshotCanonicalReceipt": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd",
+        "sourceIds": [
+          "datacite",
+          "openalex"
+        ],
+        "workId": "work:60f291220d74592bbe4c"
+      },
+      "sourceMetadataTitle": "Semantic Zero-Trust for Model Context Protocol",
+      "sourceTitleIsScientificClaim": false
+    },
+    {
+      "claimBoundary": "The source metadata title is not a scientific claim; no claim has been extracted or evaluated.",
+      "disposition": "advanced-to-human-scoping",
+      "evaluationLens": "mechanistic-evidence-discrimination",
+      "evaluationRequestId": "evaluation-request:thinking-no-thinking-sae:2026-08-20",
+      "holdReasons": [],
+      "id": "referral:thinking-no-thinking-sae:2026-08-20",
+      "referredOn": "2026-08-20",
+      "schema": "kingdom.trial-referral/0.1",
+      "sourceBinding": {
+        "observationIds": [
+          "observation:openalex:1b8e64b22e3dadc2"
+        ],
+        "observations": [
+          {
+            "canonicalUrl": "https://arxiv.org/abs/2608.08168",
+            "observationId": "observation:openalex:1b8e64b22e3dadc2",
+            "observedAt": "2026-08-20T18:09:27Z",
+            "sourceId": "openalex",
+            "sourcePayloadReceipt": "sha256:f189312453977c068eecb917cf38e84d9187f70c207d22dc52c021a7b531dafa",
+            "sourceRecordId": "W7202210108"
+          }
+        ],
+        "payloadReceiptsAreArtifactDigests": false,
+        "primaryIdentifier": {
+          "scheme": "doi",
+          "value": "10.48550/arxiv.2608.08168"
+        },
+        "relatedWorkIds": [],
+        "signalIds": [
+          "signal:watchlist-match:3620a05a1d18abb5"
+        ],
+        "snapshotAsOf": "2026-08-20T18:10:14Z",
+        "snapshotByteSha256": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94",
+        "snapshotCanonicalReceipt": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd",
+        "sourceIds": [
+          "openalex"
+        ],
+        "workId": "work:f0afa9fe8652ed9ab84d"
+      },
+      "sourceMetadataTitle": "Thinking vs. NoThinking: Towards Interpreting Reasoning Mechanisms of Large Language Models via Sparse Autoencoders",
+      "sourceTitleIsScientificClaim": false
+    }
+  ],
+  "schema": "kingdom.trial-public-snapshot/0.1",
+  "trialAuthorities": [],
+  "trialRuns": [],
+  "urls": {
+    "canonical": "https://thekingdom.dev/trials/research-trial-chamber-2026-08-20.json",
+    "current": "https://thekingdom.dev/trials.json",
+    "guide": "https://thekingdom.dev/TRIAL-CHAMBER-v0.1.md",
+    "human": "https://thekingdom.dev/trial-chamber/",
+    "producer": "https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.0"
+  },
+  "useAuthorities": []
+}

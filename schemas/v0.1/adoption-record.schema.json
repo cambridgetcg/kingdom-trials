@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/adoption-record.schema.json",
+  "title": "KINGDOM Trial Chamber adoption record — reserved in Phase 0",
+  "description": "Deny-all contract. Trial Chamber v0.1 cannot decide or represent adoption. A later version must bind a separately accountable decision identity and rationale to exact corrected results, make module and guest paths mutually exclusive, and preserve decline and defer without creating use authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "not": {}
+}

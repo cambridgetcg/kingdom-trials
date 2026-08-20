@@ -1,0 +1,137 @@
+{
+  "captureSetReceipt": "sha256:68a69dc390aa34133cadc8807ed33ddd1fae72e7e99706cf714d72698d071f7f",
+  "snapshotAsOf": "2026-08-20T18:10:14Z",
+  "snapshotByteSha256": "sha256:d7da3f38de019dc0f2c45f477740222527f156d8a4d3f6a2e22aced67b282a94",
+  "snapshotCanonicalReceipt": "sha256:17c487aa03f8427fc324b8da34dedbc00db76362be78620bde3a8d075e3942cd",
+  "works": [
+    {
+      "observationIds": [
+        "observation:datacite:1916afceb5a82955",
+        "observation:openalex:b3101fd2b0bad721"
+      ],
+      "observations": [
+        {
+          "canonicalUrl": "https://zenodo.org/doi/10.5281/zenodo.21731418",
+          "observationId": "observation:datacite:1916afceb5a82955",
+          "observedAt": "2026-08-20T18:09:58Z",
+          "sourceId": "datacite",
+          "sourcePayloadReceipt": "sha256:8073fb244311355bd71e6becb29d38ae72bce726c186ffb315c586e6ae74bba5",
+          "sourceRecordId": "10.5281/zenodo.21731418"
+        },
+        {
+          "canonicalUrl": "https://doi.org/10.5281/zenodo.21731418",
+          "observationId": "observation:openalex:b3101fd2b0bad721",
+          "observedAt": "2026-08-20T18:07:48Z",
+          "sourceId": "openalex",
+          "sourcePayloadReceipt": "sha256:2b632e0415b541f7fd58e14d4cd2c88a7a9fe8360a62fc12a7588a2196b4c637",
+          "sourceRecordId": "W7172128171"
+        }
+      ],
+      "primaryIdentifier": {
+        "scheme": "doi",
+        "value": "10.5281/zenodo.21731418"
+      },
+      "relatedWorkIds": [
+        "work:c6624953de841194cf4c"
+      ],
+      "signalIds": [
+        "signal:publication-link:6f42c3e3435c2904",
+        "signal:source-corroboration:b18a3d633157d76f",
+        "signal:version-activity:1d84606fbe27c21d",
+        "signal:watchlist-match:e6fa8160dbdf4705"
+      ],
+      "sourceIds": [
+        "datacite",
+        "openalex"
+      ],
+      "sourceMetadataTitle": "Semantic Zero-Trust for Model Context Protocol",
+      "workId": "work:60f291220d74592bbe4c"
+    },
+    {
+      "observationIds": [
+        "observation:arxiv:e6f88ec1494225ed"
+      ],
+      "observations": [
+        {
+          "canonicalUrl": "https://arxiv.org/abs/2608.00997",
+          "observationId": "observation:arxiv:e6f88ec1494225ed",
+          "observedAt": "2026-08-20T18:10:14Z",
+          "sourceId": "arxiv",
+          "sourcePayloadReceipt": "sha256:2ee0413c8600110b459d631b27cb368754f5e44af15334c449ec8a839887849f",
+          "sourceRecordId": "2608.00997"
+        }
+      ],
+      "primaryIdentifier": {
+        "scheme": "arxiv",
+        "value": "2608.00997"
+      },
+      "relatedWorkIds": [],
+      "signalIds": [
+        "signal:watchlist-match:a9480de36dfaf813"
+      ],
+      "sourceIds": [
+        "arxiv"
+      ],
+      "sourceMetadataTitle": "Registry Descriptions Go Stale Unevenly: An 89-Day Measurement of Model Context Protocol Drift, and Why Drift-Ranked Re-Auditing Under-Covers It",
+      "workId": "work:59218754c0e3e56078b7"
+    },
+    {
+      "observationIds": [
+        "observation:openalex:1b8e64b22e3dadc2"
+      ],
+      "observations": [
+        {
+          "canonicalUrl": "https://arxiv.org/abs/2608.08168",
+          "observationId": "observation:openalex:1b8e64b22e3dadc2",
+          "observedAt": "2026-08-20T18:09:27Z",
+          "sourceId": "openalex",
+          "sourcePayloadReceipt": "sha256:f189312453977c068eecb917cf38e84d9187f70c207d22dc52c021a7b531dafa",
+          "sourceRecordId": "W7202210108"
+        }
+      ],
+      "primaryIdentifier": {
+        "scheme": "doi",
+        "value": "10.48550/arxiv.2608.08168"
+      },
+      "relatedWorkIds": [],
+      "signalIds": [
+        "signal:watchlist-match:3620a05a1d18abb5"
+      ],
+      "sourceIds": [
+        "openalex"
+      ],
+      "sourceMetadataTitle": "Thinking vs. NoThinking: Towards Interpreting Reasoning Mechanisms of Large Language Models via Sparse Autoencoders",
+      "workId": "work:f0afa9fe8652ed9ab84d"
+    },
+    {
+      "observationIds": [
+        "observation:datacite:6119662c70f05464"
+      ],
+      "observations": [
+        {
+          "canonicalUrl": "https://zenodo.org/doi/10.5281/zenodo.21757178",
+          "observationId": "observation:datacite:6119662c70f05464",
+          "observedAt": "2026-08-20T18:07:20Z",
+          "sourceId": "datacite",
+          "sourcePayloadReceipt": "sha256:c4aa57a024ce29f52fb92ef62fb1f74687553b6ef91b8591639693f6d171f061",
+          "sourceRecordId": "10.5281/zenodo.21757178"
+        }
+      ],
+      "primaryIdentifier": {
+        "scheme": "doi",
+        "value": "10.5281/zenodo.21757178"
+      },
+      "relatedWorkIds": [],
+      "signalIds": [
+        "signal:publication-link:1953589b522a8813",
+        "signal:publication-link:a83f4b77907675be",
+        "signal:watchlist-match:0e5818f2beb21d20"
+      ],
+      "sourceIds": [
+        "datacite"
+      ],
+      "sourceMetadataTitle": "Role-Styled Prompt Injection: An Activation and KV-State Probe in a Compact Language Model",
+      "workId": "work:001b6af0d2b1fc7f3ac0"
+    }
+  ]
+}

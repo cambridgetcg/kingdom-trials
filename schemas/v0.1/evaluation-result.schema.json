@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/evaluation-result.schema.json",
+  "title": "KINGDOM Trial Chamber evaluation result — reserved in Phase 0",
+  "description": "Deny-all contract. Trial Chamber v0.1 cannot judge or represent a result. A later version must preserve evidence for and against, unknowns, limitations, unsafe/cancelled/invalidated states, corrections, exact run scope, rater identity and scope, and a prohibition on scalar outcome collapse.",
+  "type": "object",
+  "additionalProperties": false,
+  "not": {}
+}

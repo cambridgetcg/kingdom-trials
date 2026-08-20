@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thekingdom.dev/trials/schemas/v0.1/referral.schema.json",
+  "title": "KINGDOM Trial Chamber referral v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "referredOn",
+    "evaluationLens",
+    "disposition",
+    "sourceMetadataTitle",
+    "sourceTitleIsScientificClaim",
+    "claimBoundary",
+    "sourceBinding",
+    "evaluationRequestId",
+    "holdReasons"
+  ],
+  "properties": {
+    "schema": { "const": "kingdom.trial-referral/0.1" },
+    "id": { "type": "string", "pattern": "^referral:[a-z0-9][a-z0-9:.-]{1,158}$" },
+    "referredOn": { "type": "string", "format": "date" },
+    "evaluationLens": {
+      "enum": [
+        "security-model-clarity",
+        "measurement-reproducibility",
+        "mechanistic-evidence-discrimination",
+        "source-identity-resolution"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "advanced-to-human-scoping",
+        "held-for-source-resolution"
+      ]
+    },
+    "sourceMetadataTitle": { "type": "string", "minLength": 1, "maxLength": 500 },
+    "sourceTitleIsScientificClaim": { "const": false },
+    "claimBoundary": { "type": "string", "minLength": 20, "maxLength": 500 },
+    "sourceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotAsOf",
+        "snapshotByteSha256",
+        "snapshotCanonicalReceipt",
+        "workId",
+        "sourceIds",
+        "primaryIdentifier",
+        "relatedWorkIds",
+        "observationIds",
+        "observations",
+        "payloadReceiptsAreArtifactDigests",
+        "signalIds"
+      ],
+      "properties": {
+        "snapshotAsOf": { "type": "string", "format": "date-time" },
+        "snapshotByteSha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "snapshotCanonicalReceipt": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "workId": { "type": "string", "pattern": "^work:[0-9a-f]{20}$" },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" }
+        },
+        "primaryIdentifier": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scheme", "value"],
+          "properties": {
+            "scheme": { "enum": ["arxiv", "doi", "openalex", "pmid", "pmcid", "source"] },
+            "value": { "type": "string", "minLength": 1, "maxLength": 300 }
+          }
+        },
+        "relatedWorkIds": {
+          "type": "array",
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^work:[0-9a-f]{20}$" }
+        },
+        "observationIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^observation:[a-z0-9-]+:[0-9a-f]{16}$" }
+        },
+        "observations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "observationId",
+              "sourceId",
+              "sourceRecordId",
+              "observedAt",
+              "canonicalUrl",
+              "sourcePayloadReceipt"
+            ],
+            "properties": {
+              "observationId": { "type": "string", "pattern": "^observation:[a-z0-9-]+:[0-9a-f]{16}$" },
+              "sourceId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
+              "sourceRecordId": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "observedAt": { "type": "string", "format": "date-time" },
+              "canonicalUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+              "sourcePayloadReceipt": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+            }
+          }
+        },
+        "payloadReceiptsAreArtifactDigests": { "const": false },
+        "signalIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^signal:[a-z0-9-]+:[0-9a-f]{16}$" }
+        }
+      }
+    },
+    "evaluationRequestId": {
+      "type": ["string", "null"],
+      "pattern": "^evaluation-request:[a-z0-9][a-z0-9:.-]{1,140}$"
+    },
+    "holdReasons": {
+      "type": "array",
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "self-version-relation-unresolved",
+          "supplement-target-absent-from-pinned-snapshot",
+          "version-identity-unresolved",
+          "item-rights-unresolved",
+          "source-integrity-change",
+          "model-pin-absent",
+          "method-pin-absent",
+          "dataset-pin-absent",
+          "artifact-pin-absent"
+        ]
+      }
+    }
+  }
+}
