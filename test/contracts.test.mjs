@@ -64,6 +64,7 @@ test('dated public schema validates exact Phase-0 snapshot and rejects count dri
 test('package is private, unlicensed, zero-dependency, and Node 20+', () => {
   const pkg = readJson(join(ROOT, 'package.json'))
   assert.equal(pkg.private, true)
+  assert.equal(pkg.version, '0.1.1')
   assert.equal(pkg.license, 'UNLICENSED')
   assert.equal(pkg.engines.node, '>=20')
   assert.equal(Object.hasOwn(pkg, 'dependencies'), false)

@@ -57,6 +57,20 @@ test('canonical JSON is stable and normalizes negative zero', () => {
   assert.equal(sha256Json(left), sha256Json(right))
 })
 
+test('canonical JSON preserves root and nested prototype-shaped member names', () => {
+  const hostile = parseJsonBytes(Buffer.from('{"__proto__":{"polluted":true},"constructor":"constructor-data","nested":{"__proto__":{"admin":true},"prototype":"prototype-data"},"safe":1}'))
+  const withoutPrototypeMember = parseJsonBytes(Buffer.from('{"constructor":"constructor-data","nested":{"prototype":"prototype-data"},"safe":1}'))
+  const canonical = canonicalJson(hostile)
+
+  assert.notEqual(canonical, canonicalJson(withoutPrototypeMember))
+  assert.notEqual(sha256Json(hostile), sha256Json(withoutPrototypeMember))
+  assert.match(canonical, /"__proto__":\{"polluted":true\}/u)
+  assert.match(canonical, /"nested":\{"__proto__":\{"admin":true\},"prototype":"prototype-data"\}/u)
+  assert.match(canonical, /"constructor":"constructor-data"/u)
+  assert.equal(Object.prototype.polluted, undefined)
+  assert.equal(Object.prototype.admin, undefined)
+})
+
 test('bundled-path guard rejects traversal and a simulated symlink ancestor', () => {
   assert.equal(insideRoot(join(ROOT, 'data', 'config.json')), true)
   assert.equal(insideRoot(join(ROOT, '..', 'outside.json')), false)

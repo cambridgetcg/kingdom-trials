@@ -9,6 +9,7 @@ import {
   canonicalJson,
   prettyCanonicalJson,
   readJson,
+  parseJsonBytes,
   sha256Bytes,
   sha256Json,
 } from '../src/io.mjs'
@@ -20,6 +21,7 @@ import {
   loadObservatoryLock,
   snapshotIssues,
   validateCheckedInSnapshot,
+  validateObservatoryLock,
   writeSnapshot,
 } from '../src/trials.mjs'
 
@@ -52,8 +54,9 @@ test('checked-in snapshot is exact canonical build bytes', () => {
   const snapshot = buildSnapshot()
   const bytes = readFileSync(PUBLIC_SNAPSHOT)
   assert.equal(bytes.toString('utf8'), prettyCanonicalJson(snapshot))
-  assert.equal(sha256Bytes(bytes), 'sha256:15934c754fc7dd7ab4869c6b6c73a146b43255c1f402d06ffbc5caa59b6340b6')
-  assert.equal(sha256Json(snapshot), 'sha256:4e518fe41cfd2cd579db64e6dd5ea9175a4fa387a93859cc331d195523c317d5')
+  assert.equal(sha256Bytes(bytes), 'sha256:6e59bf134d129b17fc0f02949d9ef383de6787e2bc39e1714a3c6f01376b1d34')
+  assert.equal(sha256Json(snapshot), 'sha256:6760636cd7c024af8edd2f7d8d5816b8c05c97993abf42ad91516091118d480e')
+  assert.equal(snapshot.urls.producer, 'https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.1')
   assert.equal(validateCheckedInSnapshot().current, true)
 })
 
@@ -76,6 +79,13 @@ test('exact Observatory projected lock is pinned to whole-snapshot evidence', ()
   }, expectedObservatoryBinding)
   assert.equal(lock.works.length, 4)
   assert.equal(lock.works.flatMap((work) => work.observations).every((item) => /^sha256:[0-9a-f]{64}$/u.test(item.sourcePayloadReceipt)), true)
+})
+
+test('projected-lock receipt rejects an own __proto__ mutation', () => {
+  const lock = loadObservatoryLock()
+  const mutated = parseJsonBytes(Buffer.from(`{"__proto__":{"receiptBypass":true},${canonicalJson(lock).slice(1)}`))
+  assert.notEqual(sha256Json(mutated), expectedLockReceipt)
+  assert.throws(() => validateObservatoryLock(mutated), /receipt differs from the reviewed constant/u)
 })
 
 test('referrals preserve metadata—not scientific claims—and Role-Styled stays exactly held', () => {

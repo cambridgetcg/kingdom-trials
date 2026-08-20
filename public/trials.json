@@ -663,7 +663,7 @@
     "current": "https://thekingdom.dev/trials.json",
     "guide": "https://thekingdom.dev/TRIAL-CHAMBER-v0.1.md",
     "human": "https://thekingdom.dev/trial-chamber/",
-    "producer": "https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.0"
+    "producer": "https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.1"
   },
   "useAuthorities": []
 }

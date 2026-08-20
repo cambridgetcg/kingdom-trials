@@ -82,8 +82,7 @@ function sortedRecords(records) {
   return [...records].sort((left, right) => left.id.localeCompare(right.id))
 }
 
-export function loadObservatoryLock() {
-  const lock = readJson(join(ROOT, 'data', 'observatory-lock.json'))
+export function validateObservatoryLock(lock) {
   if (sha256Json(lock) !== EXPECTED_LOCK_RECEIPT) {
     throw new Error('observatory projected lock receipt differs from the reviewed constant')
   }
@@ -100,6 +99,10 @@ export function loadObservatoryLock() {
     throw new Error('observatory projected lock binding differs from the reviewed whole-snapshot constants')
   }
   return lock
+}
+
+export function loadObservatoryLock() {
+  return validateObservatoryLock(readJson(join(ROOT, 'data', 'observatory-lock.json')))
 }
 
 export function loadInputs() {

@@ -38,7 +38,10 @@ function normalized(value, seen = new Set()) {
     if (Object.getPrototypeOf(value) !== Object.prototype) {
       throw new TypeError('JSON object must have the ordinary object prototype')
     }
-    const result = {}
+    // A null-prototype accumulator makes every JSON member name inert data.
+    // In particular, assigning an own `__proto__` key must not invoke
+    // Object.prototype's legacy setter and silently disappear from a receipt.
+    const result = Object.create(null)
     for (const key of Object.keys(value).sort()) {
       if (value[key] === undefined) throw new TypeError('undefined JSON value')
       result[key] = normalized(value[key], seen)

@@ -1,6 +1,6 @@
 {
   "name": "@kingdom/trial-chamber",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only, review-gated evaluation planning projected from the KINGDOM Research Observatory.",
   "type": "module",
   "private": true,

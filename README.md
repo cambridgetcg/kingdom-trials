@@ -14,7 +14,7 @@ The current machine projection will be published at:
 - public guide: `https://thekingdom.dev/TRIAL-CHAMBER-v0.1.md`
 
 The producer source is intended to be pinned at
-`https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.0`. Public visibility
+`https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.1`. Public visibility
 does not grant reuse rights; this package is `UNLICENSED`.
 
 ## Offline commands

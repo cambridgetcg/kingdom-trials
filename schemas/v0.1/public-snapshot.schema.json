@@ -39,7 +39,7 @@
         "current": { "const": "https://thekingdom.dev/trials.json" },
         "human": { "const": "https://thekingdom.dev/trial-chamber/" },
         "guide": { "const": "https://thekingdom.dev/TRIAL-CHAMBER-v0.1.md" },
-        "producer": { "const": "https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.0" }
+        "producer": { "const": "https://github.com/cambridgetcg/kingdom-trials/tree/v0.1.1" }
       }
     },
     "observatoryBinding": {
